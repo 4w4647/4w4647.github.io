@@ -1,0 +1,103 @@
+baseURL: "https://4w4647.github.io/"
+title: "4w4647's Blog"
+theme: "PaperMod"
+
+enableRobotsTXT: true
+canonifyURLs: false
+
+pagination:
+  pagerSize: 10
+
+taxonomies:
+  category: categories
+  tag: tags
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+# -----------------------------
+# CORE SEO + SITE SETTINGS
+# -----------------------------
+params:
+  env: production
+  title: "4w4647's Blog"
+  description: "Reverse engineering, binary exploitation, and low-level security research in x86/x64 assembly, C and Python."
+  author: "4w4647"
+
+  defaultTheme: auto
+  disableThemeToggle: false
+
+  # SEO behavior
+  ShowFullTextInRSS: true
+  ShowCanonicalLink: true
+
+  # UI/UX
+  ShowReadingTime: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowToc: true
+  TocOpen: false
+
+  ShowPageNums: true
+  ShowRssButtonInSectionTermList: true
+
+  # Optional but useful
+  assets:
+    favicon: "/favicon.ico"
+
+  # -----------------------------
+  # HOMEPAGE PROFILE MODE
+  # -----------------------------
+  profileMode:
+    enabled: true
+    title: "Awagat Dhungana (4w4647)"
+    subtitle: "Security Researcher"
+    imageUrl: "/img/avatar.jpeg"
+    imageWidth: 250
+    imageHeight: 250
+    imageTitle: "Profile Image"
+
+  # -----------------------------
+  # SOCIAL SIGNALS (SEO + BRAND)
+  # -----------------------------
+  socialIcons:
+    - name: github
+      url: "https://github.com/4w4647/"
+    - name: linkedin
+      url: "https://linkedin.com/in/4w4647"
+    - name: x
+      url: "https://x.com/4w4647"
+
+# -----------------------------
+# NAVIGATION
+# -----------------------------
+menu:
+  main:
+    - name: Posts
+      url: /posts/
+      weight: 1
+    - name: Categories
+      url: /categories/
+      weight: 2
+    - name: Tags
+      url: /tags/
+      weight: 3
+    - name: Search
+      url: /search/
+      weight: 4
+
+# -----------------------------
+# IMPORTANT HUGO BEHAVIOR
+# -----------------------------
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+  highlight:
+    noClasses: false
+    lineNos: false
