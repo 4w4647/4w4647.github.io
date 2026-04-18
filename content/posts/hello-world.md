@@ -1,7 +1,7 @@
 ---
 title: "Test Post"
 date: 2026-04-18T06:39:59+05:45
-draft: true
+draft: false
 
 description: "This is a test post created to verify site content rendering and formatting."
 
