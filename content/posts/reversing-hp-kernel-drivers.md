@@ -129,14 +129,14 @@ Conclusion:      IOCTL handler is a stub. No input processing occurs
 
 ### First Difference: Ghidra Knows This One
 
-When I traced into the KMDF init function on this driver, Ghidra's FLIRT signature database fired:
+When I traced into the KMDF init function on this driver, Ghidra's Function ID (FID) database fired:
 
 ```
 /* Library Function - Single Match: FxDriverEntryWorker
    Library: Visual Studio 2019 Release */
 ```
 
-FLIRT (Fast Library Identification and Recognition Technology) matched the compiled code against known library signatures. I didn't have to reverse the framework boilerplate — Ghidra told me exactly what it was. This is one of the practical advantages of working in Ghidra: as you encounter more drivers, the framework code gets identified automatically and you can focus on the vendor-specific logic.
+FID (Function ID) is Ghidra's library function recognition system — it hashes known compiled library code and matches it against what's in the binary. I didn't have to reverse the framework boilerplate — Ghidra told me exactly what it was. This is one of the practical advantages of working in Ghidra: as you encounter more drivers, the framework code gets identified automatically and you can focus on the vendor-specific logic.
 
 I also spotted a debug string that shouldn't be in a production binary:
 
@@ -159,10 +159,10 @@ local_40 = FUN_140005150;   // EvtIoWrite
 And the queue configuration included:
 
 ```c
-uStack_90 = 0x100000001;    // MaximumRequests = 1
+uStack_90 = 0x100000001;
 ```
 
-This is a **serialized queue** — requests are processed one at a time, not concurrently. From a vulnerability research perspective this constrains the race window for any TOCTOU (Time-of-Check to Time-of-Use) bugs. Worth noting even when the handlers themselves turn out to be stubs.
+The raw value `0x100000001` is Ghidra representing two adjacent 4-byte fields as a single 8-byte stack variable — most likely the `Size` field and the `DispatchType` field of `WDF_IO_QUEUE_CONFIG` packed together. The lower DWORD (`0x00000001`) matches `WdfIoQueueDispatchSequential`, which is what makes this a **serialized queue** — requests are processed one at a time, not concurrently. From a vulnerability research perspective this constrains the race window for any TOCTOU (Time-of-Check to Time-of-Use) bugs. Worth noting even when the handlers themselves turn out to be stubs.
 
 ### The Handlers
 
