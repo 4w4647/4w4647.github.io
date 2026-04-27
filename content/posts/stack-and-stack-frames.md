@@ -103,7 +103,7 @@ There are two real answers to why the stack grows down. Both are correct.
  
 The historical answer is that in the 70s memory was tiny. Designers wanted the stack and heap to share whatever memory was available. So they put the stack at the top of memory growing down, and the heap at the bottom growing up. They'd meet in the middle only when memory truly ran out. Clever for its time.
  
-The hardware answer is that the CPU has it baked in. The PUSH instruction on x86/x64 literally does this:
+The hardware answer is that the CPU has it baked in. The PUSH instruction on x64 literally does this:
  
 ```
 RSP = RSP - 8
