@@ -1,7 +1,6 @@
 baseURL: "https://4w4647.github.io/"
 title: "4w4647's Blog"
 theme: "PaperMod"
-
 enableRobotsTXT: true
 canonifyURLs: false
 
@@ -24,15 +23,26 @@ outputs:
 params:
   env: production
   title: "4w4647's Blog"
-  description: "Reverse engineering, binary exploitation, and low-level security research in x86/x64 assembly, C and Python."
-  author: "4w4647"
-
+  description: "Exploit development, reverse engineering, and vulnerability research by Awagat Dhungana (4w4647). x86/x64 assembly, Windows internals, and malware analysis."
+  keywords:
+    - exploit development
+    - reverse engineering
+    - vulnerability research
+    - binary exploitation
+    - x86 assembly
+    - x64 assembly
+    - Windows internals
+    - malware analysis
+    - OSED
+    - offensive security
+  author: "Awagat Dhungana"
   defaultTheme: auto
   disableThemeToggle: false
 
   # SEO behavior
   ShowFullTextInRSS: true
   ShowCanonicalLink: true
+  ShowSchemaOrg: true
 
   # UI/UX
   ShowReadingTime: true
@@ -41,11 +51,13 @@ params:
   ShowCodeCopyButtons: true
   ShowToc: true
   TocOpen: false
-
   ShowPageNums: true
   ShowRssButtonInSectionTermList: true
 
-  # Optional but useful
+  # Open Graph fallback image
+  images:
+    - /img/avatar.jpeg
+
   assets:
     favicon: "/favicon.ico"
 
@@ -55,11 +67,14 @@ params:
   profileMode:
     enabled: true
     title: "Awagat Dhungana (4w4647)"
-    subtitle: "Security Researcher"
+    subtitle: >
+      Security researcher into exploit development, reverse engineering, and vulnerability research.
+      C/C++, x86/x64 assembly, Windows internals, and malware analysis.
+      Currently preparing for OSED.
     imageUrl: "/img/avatar.jpeg"
     imageWidth: 250
     imageHeight: 250
-    imageTitle: "Profile Image"
+    imageTitle: "Avatar"
 
   # -----------------------------
   # SOCIAL SIGNALS (SEO + BRAND)
@@ -89,6 +104,9 @@ menu:
     - name: Search
       url: /search/
       weight: 4
+    - name: About
+      url: /about/
+      weight: 5
 
 # -----------------------------
 # IMPORTANT HUGO BEHAVIOR
@@ -97,7 +115,6 @@ markup:
   goldmark:
     renderer:
       unsafe: true
-
   highlight:
     noClasses: false
     lineNos: false

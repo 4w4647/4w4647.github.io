@@ -5,7 +5,7 @@ date: 2026-04-30T04:06:54+05:45
 draft: false
 
 description: "A deep dive into x86 stack frames, prologues, epilogues, calling conventions, little-endian memory, and how a simple buffer overflow leads to EIP control."
-tags: [exploit-development, x86, osed, windbg, stack-overflow, assembly]
+tags: [Exploit-Development, x86, OSED, WinDbg, Stack-Overflow, Assembly]
 categories: [OSED]
 
 cover:
@@ -14,7 +14,7 @@ cover:
 ---
 
 ## Where Everything Starts
- 
+
 Before you write a single byte of shellcode, before you talk about ROP chains or DEP bypasses, there is one mental model you need to have locked in cold. The stack frame.
  
 Every stack-based exploit ever written comes down to the same thing: you overflow a buffer, you overwrite a return address, and when the function returns, the CPU jumps somewhere you control. That's it. The techniques that come later are just clever ways of working around defenses layered on top of that same primitive.
