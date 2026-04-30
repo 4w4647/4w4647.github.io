@@ -1,5 +1,6 @@
 ---
 slug: ""
+
 title: ""
 date: {{ .Date }}
 draft: true

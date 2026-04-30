@@ -1,5 +1,6 @@
 ---
 slug: "stack-frames-the-foundation-of-every-stack-overflow"
+
 title: "Stack Frames - The Foundation of Every Stack Overflow"
 date: 2026-04-30T04:06:54+05:45
 draft: false
