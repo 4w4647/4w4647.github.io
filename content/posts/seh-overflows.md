@@ -5,7 +5,7 @@ title: "SEH Overflows - Hijacking Windows Exception Handlers"
 date: 2026-05-01T13:17:42+05:45
 draft: false
 
-description: "A technical walkthrough of SEH-based exploitation on x86 Windows - overwriting exception handler records, POP POP RET mechanics, SafeSEH bypass, and island hopping with short and near jumps to deliver shellcode."
+description: "A technical walkthrough of SEH-based exploitation on x86 Windows - overwriting exception handler records, POP POP RET mechanics, and island hopping with short and near jumps to deliver shellcode."
 tags: [Exploit-Development, x86, OSED, WinDbg, SEH, Stack-Overflow, Shellcode]
 categories: [OSED]
 
