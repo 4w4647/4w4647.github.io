@@ -23,7 +23,7 @@ outputs:
 params:
   env: production
   title: "4w4647's Blog"
-  description: "Exploit development, reverse engineering, and vulnerability research by Awagat Dhungana (4w4647). x86/x64 assembly, Windows internals, and malware analysis."
+  description: "Security research by Awagat Dhungana (4w4647). Windows internals, x86/x64 assembly, C, Rust."
   keywords:
     - exploit development
     - reverse engineering
@@ -68,9 +68,7 @@ params:
     enabled: true
     title: "Awagat Dhungana (4w4647)"
     subtitle: >
-      Security researcher into exploit development, reverse engineering, and vulnerability research.
-      C/C++, x86/x64 assembly, Windows internals, and malware analysis.
-      Currently preparing for OSED.
+      Security researcher into Windows internals.
     imageUrl: "/img/avatar.jpeg"
     imageWidth: 250
     imageHeight: 250
